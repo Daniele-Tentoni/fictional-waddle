@@ -17,9 +17,9 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                  node-version: '24'
-                  scope: '@daniele-tentoni'
-                  registry-url: 'https://npm.pkg.github.com'
+                  node-version: "24"
+                  scope: "@daniele-tentoni"
+                  registry-url: "https://npm.pkg.github.com"
             - run: |
                   npm ci
                   npm run test:unit
@@ -37,6 +37,6 @@ jobs:
                   git commit -m "chore(release): version bump [skip ci]" || echo "No changes to commit"
 
                   git push
-            - run: npm publish
+            - run: npx changeset publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -34,7 +34,6 @@
         "format:check": "prettier --check .",
         "changeset": "changeset",
         "version": "changeset version",
-        "publish": "changeset publish",
         "release": "run-s build version publish",
         "test:unit": "vitest run"
     },
