@@ -17,7 +17,7 @@ jobs:
                   node-version: '24'
                   scope: '@daniele-tentoni'
                   registry-url: 'https://npm.pkg.github.com'
-                  # npm run test:unit
             - run: |
                   npm ci
                   npm run format:check
+                  npm run test:unit
