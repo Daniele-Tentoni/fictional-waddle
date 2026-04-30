@@ -25,6 +25,6 @@ jobs:
                   npx changeset pre enter beta
                   npm run build
                   npm run version
-            - run: npm publish -- --tag beta
+            - run: npx changeset publish --tag beta
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
