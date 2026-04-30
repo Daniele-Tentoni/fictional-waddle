@@ -1,0 +1,42 @@
+name: Release
+
+on:
+    push:
+        branches:
+            - main
+
+permissions:
+    # Questo vuol dire che possiamo scrivere nei contenuti del repository, quindi possiamo committare anche le modifiche al changelog.
+    contents: write
+    packages: write
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '24'
+                  scope: '@daniele-tentoni'
+                  registry-url: 'https://npm.pkg.github.com'
+            - run: |
+                  npm ci
+                  npm run test:unit
+                  npx changeset pre exit || true
+                  npm run build
+                  npm run version
+            # ✅ COMMIT AUTOMATICO
+            - name: Commit version changes
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+                  git add package.json CHANGELOG.md
+
+                  git commit -m "chore(release): version bump [skip ci]" || echo "No changes to commit"
+
+                  git push
+            - run: npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

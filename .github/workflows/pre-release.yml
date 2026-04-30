@@ -1,0 +1,30 @@
+name: Release
+
+on:
+    push:
+        branches:
+            - devel
+
+permissions:
+    contents: read
+    packages: write
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '24'
+                  scope: '@daniele-tentoni'
+                  registry-url: 'https://npm.pkg.github.com'
+            - run: |
+                  npm ci
+                  npm run test:unit
+                  npx changeset pre enter beta
+                  npm run build
+                  npm run version
+            - run: npm publish -- --tag beta
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
