@@ -1,0 +1,181 @@
+{
+    "color": {
+        "palette": {
+            "main": {
+                "50": {
+                    "$type": "color",
+                    "$value": "#E5EFFF"
+                },
+                "100": {
+                    "$type": "color",
+                    "$value": "#ABC6EF"
+                },
+                "200": {
+                    "$type": "color",
+                    "$value": "#80A6DE"
+                },
+                "300": {
+                    "$type": "color",
+                    "$value": "#5686CE"
+                },
+                "400": {
+                    "$type": "color",
+                    "$value": "#2B66BD"
+                },
+                "500": {
+                    "$type": "color",
+                    "$value": "#0046AD"
+                },
+                "600": {
+                    "$type": "color",
+                    "$value": "#00388A"
+                },
+                "700": {
+                    "$type": "color",
+                    "$value": "#002A68"
+                },
+                "800": {
+                    "$type": "color",
+                    "$value": "#001C45"
+                },
+                "900": {
+                    "$type": "color",
+                    "$value": "#000E23"
+                }
+            },
+            "neutral": {
+                "0": {
+                    "$type": "color",
+                    "$value": "#FFFFFF"
+                },
+                "100": {
+                    "$type": "color",
+                    "$value": "#F5F5F5"
+                },
+                "900": {
+                    "$type": "color",
+                    "$value": "#111111"
+                }
+            },
+            "surface": {
+                "default": {
+                    "$type": "color",
+                    "$value": "#F2F4F8"
+                },
+                "subtle": {
+                    "$type": "color",
+                    "$value": "#E4E9F1"
+                },
+                "muted": {
+                    "$type": "color",
+                    "$value": "#D8E0ED"
+                }
+            },
+            "status": {
+                "danger": {
+                    "base": {
+                        "$type": "color",
+                        "$value": "#E98181"
+                    },
+                    "hover": {
+                        "$type": "color",
+                        "$value": "#E15656"
+                    },
+                    "subtle": {
+                        "$type": "color",
+                        "$value": "#EBC2C2"
+                    }
+                },
+                "success": {
+                    "base": {
+                        "$type": "color",
+                        "$value": "#3EA15A"
+                    },
+                    "active": {
+                        "$type": "color",
+                        "$value": "#73D38E"
+                    },
+                    "hover": {
+                        "$type": "color",
+                        "$value": "#4DC76F"
+                    },
+                    "light": {
+                        "$type": "color",
+                        "$value": "#C1EBCD"
+                    }
+                },
+                "info": {
+                    "base": {
+                        "$type": "color",
+                        "$value": "#45A4F1"
+                    },
+                    "active": {
+                        "$type": "color",
+                        "$value": "#72BDF3"
+                    },
+                    "hover": {
+                        "$type": "color",
+                        "$value": "#67B5F4"
+                    }
+                },
+                "warning": {
+                    "base": {
+                        "$type": "color",
+                        "$value": "#FFAB07"
+                    },
+                    "active": {
+                        "$type": "color",
+                        "$value": "#FFD585"
+                    },
+                    "hover": {
+                        "$type": "color",
+                        "$value": "#FFC452"
+                    },
+                    "light": {
+                        "$type": "color",
+                        "$value": "#FFE7B8"
+                    }
+                }
+            }
+        }
+    },
+    "semantic": {
+        "text": {
+            "primary": {
+                "$type": "color",
+                "$value": "{color.palette.main.900}"
+            }
+        },
+        "action": {
+            "primary": {
+                "background": {
+                    "$type": "color",
+                    "$value": "{color.palette.main.500}",
+                    "comment": "Default color for actions"
+                },
+                "hover": {
+                    "$type": "color",
+                    "$value": "{color.palette.main.400}"
+                },
+                "active": {
+                    "$type": "color",
+                    "$value": "{color.palette.main.100}"
+                },
+                "text": {
+                    "$type": "color",
+                    "$value": "{color.palette.main.50}"
+                }
+            }
+        },
+        "border": {
+            "default": {
+                "$type": "color",
+                "$value": "{color.palette.neutral.100}"
+            },
+            "strong": {
+                "$type": "color",
+                "$value": "{color.palette.neutral.900}"
+            }
+        }
+    }
+}
