@@ -10,7 +10,7 @@ permissions:
     packages: write
 
 jobs:
-    release:
+    pre-release:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
