@@ -1,11 +1,11 @@
 import type { App } from 'vue';
-import { BButton /*, BContainer*/ } from './components/index';
+import { BButton, BContainer } from './components/index';
 
 export * from './components/index';
 
 export default {
     install(app: App) {
         app.component('BButton', BButton);
-        //app.component('BContainer', BContainer);
+        app.component('BContainer', BContainer);
     },
 };
