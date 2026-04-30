@@ -1,4 +1,4 @@
-name: Release
+name: Pre-release
 
 on:
     push:
@@ -10,7 +10,7 @@ permissions:
     packages: write
 
 jobs:
-    release:
+    pre-release:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -19,12 +19,12 @@ jobs:
                   node-version: '24'
                   scope: '@daniele-tentoni'
                   registry-url: 'https://npm.pkg.github.com'
+                  # npm run test:unit
             - run: |
                   npm ci
-                  npm run test:unit
                   npx changeset pre enter beta
                   npm run build
                   npm run version
-            - run: npm publish -- --tag beta
+            - run: npx changeset publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
