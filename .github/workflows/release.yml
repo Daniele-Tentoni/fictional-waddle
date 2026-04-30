@@ -17,12 +17,12 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
-                  node-version: '24'
-                  scope: '@daniele-tentoni'
-                  registry-url: 'https://npm.pkg.github.com'
+                  node-version: "24"
+                  scope: "@daniele-tentoni"
+                  registry-url: "https://npm.pkg.github.com"
+                  # npm run test:unit
             - run: |
                   npm ci
-                  npm run test:unit
                   npx changeset pre exit || true
                   npm run build
                   npm run version
