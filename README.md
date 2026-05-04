@@ -17,6 +17,8 @@ Semantic tokens: what is the use
 
 ### Use the library
 
+Install using `npm i @daniele-tentoni/design-system`.
+
 ```
 // main.ts
 
