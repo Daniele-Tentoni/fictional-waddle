@@ -33,7 +33,11 @@ const spacingClass = (utility: 'px' | 'py', token: ContainerPadding) => {
     return `${utility}-${normalized}`;
 };
 
-const responsiveClasses = (utility: 'px' | 'py', base: ContainerPadding, values: ResponsivePadding) => {
+const responsiveClasses = (
+    utility: 'px' | 'py',
+    base: ContainerPadding,
+    values: ResponsivePadding,
+) => {
     const classNames = [spacingClass(utility, base)];
 
     Object.entries(values).forEach(([breakpoint, token]) => {

@@ -9,7 +9,6 @@
 - Extend the grid system with responsive `BItem` span/offset/start/order props and `BContainer` size variants.
 - Add responsive gutter controls to `BGrid` and responsive horizontal/vertical padding controls to `BContainer`.
 
-
 ## 0.3.0
 
 ### Minor Changes
