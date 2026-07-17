@@ -21,7 +21,36 @@ export default {
         },
 
         {
-            pattern: /^col-span-/,
+            pattern: /^col-span-(1[0-2]|[1-9])$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        {
+            pattern: /^col-start-(1[0-3]|[1-9])$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        {
+            pattern: /^order-(1[0-2]|[1-9])$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        {
+            pattern: /^gap-(0|gutter|gutter-md)$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        {
+            pattern: /^gap-x-(0|gutter|gutter-md)$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        {
+            pattern: /^gap-y-(0|gutter|gutter-md)$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        {
+            pattern: /^px-(0|gutter|gutter-md)$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
+        },
+        {
+            pattern: /^py-(0|gutter|gutter-md)$/,
+            variants: ['sm', 'md', 'lg', 'xl'],
         },
     ],
     theme: {
