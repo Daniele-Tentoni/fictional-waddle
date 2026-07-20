@@ -373,7 +373,8 @@ npm install
 ### Development expectations
 
 - keep this README aligned with every public change to the library;
-- update [CHANGELOG.md](./CHANGELOG.md) for every release-facing change;
+- use Changesets for release-facing changes (`npm run changeset` and `npm run version`) so changelog updates are generated automatically;
+- do not edit [CHANGELOG.md](./CHANGELOG.md) manually, to keep semantic versioning and release notes consistent;
 - prefer documenting new components, props, CSS assets, and setup steps here as soon as they become public;
 - validate library changes with the narrowest relevant checks before merging.
 
@@ -385,4 +386,26 @@ To test the package in a separate local application, build or pack the library a
 npm pack
 ```
 
-Then install the generated tarball in the consuming project.
+The command creates a tarball in the repository root, for example:
+
+```bash
+daniele-tentoni-design-system-0.3.0.tgz
+```
+
+In the consuming project, install that tarball directly:
+
+```bash
+npm install ../design-system-vue-implementation/daniele-tentoni-design-system-0.3.0.tgz
+```
+
+If the path is different on your machine, replace it with the correct absolute or relative path to the generated `.tgz` file.
+
+After installation, import and use the package as usual in the consumer app:
+
+```ts
+import DesignSystem from '@daniele-tentoni/design-system';
+import '@daniele-tentoni/design-system/variables.css';
+import '@daniele-tentoni/design-system/style.css';
+```
+
+When you generate a new tarball version, run the same `npm install <path-to-tgz>` command again in the consumer project to update it.
