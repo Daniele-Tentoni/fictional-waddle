@@ -1,4 +1,5 @@
 import type { App } from 'vue';
+import './styles/tailwind.css';
 import { BButton, BContainer, BDataTable, BGrid, BItem } from './components/index';
 
 export * from './components/index';

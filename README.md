@@ -168,21 +168,34 @@ Examples: `paddingXMd`, `gutterLg`, `startXl`.
 
 ### BButton
 
-Basic button component with design-system color classes and size variants.
+Button component aligned with the design-system variants for primary, light, outlined, and icon-enhanced actions.
 
 Props:
 
-- `size?: 'sm' | 'md' | 'lg'` with default `md`
+- `variant?: 'default' | 'white' | 'outline-blue' | 'outline-white' | 'icon'` with default `default`
+- `size?: 'small' | 'big'` with default `big`
+  : legacy aliases `sm`, `md`, and `lg` are still accepted for backward compatibility; `sm` maps to `small`, while `md` and `lg` map to `big`
+  : this compatibility layer is temporary and must be removed before the next major release
+- `type?: 'button' | 'submit' | 'reset'` with default `button`
+- `disabled?: boolean` with default `false`
 
 Slots:
 
-- default slot for button content
+- default slot for button label or text
+- `icon` slot for optional leading icon content
 
 Example:
 
 ```vue
 <template>
-    <BButton size="lg">Save changes</BButton>
+    <BButton variant="outline-blue" size="big" type="submit">
+        <template #icon>
+            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+        </template>
+        Save changes
+    </BButton>
 </template>
 ```
 
@@ -343,6 +356,7 @@ It currently provides:
 - base margin reset for `html` and `body`;
 - default sans-serif typography for body text;
 - serif typography for headings;
+- component styles for exported Vue components such as `BButton`;
 - the `.ds-root` class, which applies the design-system text and surface defaults to the application root.
 
 #### Public CSS class

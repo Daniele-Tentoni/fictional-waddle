@@ -19,6 +19,7 @@ export default defineConfig({
             entry: resolve(import.meta.dirname, 'src/index.ts'),
             name: 'DesignSystemVue',
             fileName: (format) => `design-system-vue.${format}.js`,
+            cssFileName: 'style',
         },
         rollupOptions: {
             external: ['vue'],
